@@ -6,25 +6,21 @@ import {
 } from "@mui/material";
 import { Post } from "../../hooks/useFetchPosts";
 
-interface PostCardProps {
-  post: Post;
-}
-
 const StyledBlueCardContent = styled(CardContent)({
   backgroundColor: "#000050",
 });
 
-export const PostCard = ({ post }: PostCardProps) => (
+export const PostCard = ({ userId, id, title, body }: Post) => (
   <Card raised>
     <StyledBlueCardContent>
       <MuiTypography variant="body1" gutterBottom>
-        User ID: {post.userId}
+        User ID: {userId}
       </MuiTypography>
       <MuiTypography variant="h5" component="h2">
-        Title: {post.title}
+        Title: {title}
       </MuiTypography>
       <MuiTypography variant="body2" component="p">
-        Body: {post.body}
+        Body: {body}
       </MuiTypography>
     </StyledBlueCardContent>
   </Card>

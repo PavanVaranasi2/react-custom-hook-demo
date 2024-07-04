@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Container } from "@mui/material";
 import { PostCard } from "../molecules/PostCard";
-import useFetchPosts from "../../hooks/useFetchPosts"; 
+import useFetchPosts from "../../hooks/useFetchPosts";
 
 const PostsGrid = () => {
   const posts = useFetchPosts();
@@ -11,7 +11,7 @@ const PostsGrid = () => {
       <Grid container spacing={2} mt={1}>
         {posts.map((post) => (
           <Grid item key={post.id} md={12}>
-            <PostCard post={post} />
+            <PostCard {...post} />
           </Grid>
         ))}
       </Grid>
